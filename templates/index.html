@@ -1,0 +1,32 @@
+    <div id="content">
+
+      <script type="text/javascript">
+
+        function toggleVideo(state) {
+                  <?php if (isset($video) && $video): ?>
+
+          // if state == 'hide', hide. Else: show video
+          var div = document.getElementById("trailer");
+          var iframe = div.getElementsByTagName("iframe")[0].contentWindow;
+          div.style.display = state == 'hide' ? 'none' : '';
+          func = state == 'hide' ? 'pauseVideo' : 'playVideo';
+          iframe.postMessage('{"event":"command","func":"' + func + '","args":""}', '*');
+        <?php endif ?>
+
+        }
+
+      </script>
+
+      <div id="trailer" class="modal video">
+        <!--<h1><?php echo $this->vars->meta->title; ?></h1>-->
+        <a href="home.html" class="close" onclick="resetPlayer();"></a>
+        <?php if (isset($video) && $video): ?>
+          <iframe id="trailer-player" class="youtube-player" name="trailer-player" src="<?php echo $video?>" frameborder="0" allowfullscreen="true"></iframe>
+        <?php endif ?>
+      </div>
+      <a class="screen" href="home.html" onclick="resetPlayer();"></a>
+
+		<script>
+			init();
+		</script>
+    </div>

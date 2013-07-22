@@ -1,0 +1,27 @@
+    <div id="content" itemscope itemprop="http://schema.org/Movie">
+      <div id="about" class="modal">
+        <div class="modal-header">
+          <a href="home.html" class="close" ></a>
+          <h1><?php echo $title; ?></h1>
+        </div>
+
+        <div class="modal-body" itemprop="description">
+          <?php echo $content->literal(); ?>
+        </div>
+      </div>
+      
+      <?php if (isset($this->vars['audio'])): ?>
+     	<div id="btnAudio" onclick="javascript:toggleAudio()" class="<?php echo ($this->vars['audio']->state=="muted") ? "muted" : "unmuted"; ?> audio-button"></div>
+      <?php endif ?>
+
+      <a class="screen" href="home.html"></a>
+      
+      <script type="text/javascript">
+
+		$('#about').ready(function(){
+			init();
+		})
+
+	  </script>
+
+    </div>

@@ -1,0 +1,20 @@
+{
+    "name": "fox/domth-templates",
+    "description": "Domestic Theatrical tempaltes",
+    "autoload": {
+        "psr-0": { "": "classes/" }
+    },
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/yaml": "v2.2.0"
+    },
+    "scripts": {
+        "post-install-cmd": [
+        ],
+        "post-update-cmd": [
+        ]
+    },
+    "minimum-stability": "stable",
+    "extra": {
+    }
+}

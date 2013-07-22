@@ -1,0 +1,4 @@
+#!/bin/bash
+
+php "$0.php" $*
+

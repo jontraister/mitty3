@@ -1,0 +1,69 @@
+<div id="content">
+      <div id="castandcrew" class="fullscreen">
+        <a href="home.html" class="close"></a>
+        <div id="photosCarousel" class="carousel slide swipe">
+          <div class="carousel-inner">
+            <?php foreach ($items as $i => $item):?>
+              <div class="<?php if ($selected==$i) echo 'active '; ?>item">
+                    <div class="cast-bio modal">
+                        <h1 class="title-treatment"><a href="home.html"><img src="../assets/title-treatment.png" alt="title of movie" ></a></h1>
+                        <div class="modal-header">
+                            <h1><?php echo $item->title; ?></h1>
+                        </div>
+                        <div class="modal-body cast-bio-body">
+                          <?php echo $item->description->literal(); ?>
+                        </div>
+                    </div>
+              	<img id="img-<?php echo $i+1 ?>" src="<?php echo $item->url ?>" alt="<?php echo $item->title  ?>" class="photo cast-photo" data-url="castandcrew-<?php echo $i+1 ?>.html" />
+              </div>
+            <?php endforeach; ?>
+          </div>
+          <!-- Carousel nav -->
+          <a class="carousel-control left no-ajaxy" href="#photosCarousel" data-slide="prev">&lsaquo;</a>
+          <a class="carousel-control right no-ajaxy" href="#photosCarousel" data-slide="next">&rsaquo;</a>
+          <!-- Share Links -->
+          <?php $this->render('templates/sharelinks.php'); ?>
+          <!-- Audio Button -->
+          <?php if (isset($this->vars['audio'])): ?>
+            <div id="btnAudio" onclick="javascript:toggleAudio()" class="<?php echo ($this->vars['audio']->state=="muted") ? "muted" : "unmuted"; ?> audio-button"></div>
+          <?php endif ?>
+        </div>
+      </div>
+
+    <script type="text/javascript">
+
+		init();
+
+        <!-- Photo - Auto-resize -->
+
+		var loaded = false;
+		$('#castandcrew img').load(function(){
+			windowResize();				
+			if(!loaded) {
+				RefreshSocial(false);
+				loaded = true;
+			}
+		})
+
+		$('.carousel').bind('slid', function() {
+			RefreshSocial(true)
+			//windowResize();	
+		});
+		
+		function RefreshSocial(setPushState) {
+			var activeImg= $('#photosCarousel .active img.photo');
+			var url = '<?php echo $this->vars['url'];?>' + (activeImg.attr('data-url'));
+			var msg = '<?php echo $this->vars['meta']['shareMessage'] ?>' + url;
+			
+			ReloadShareButtons(url, msg);
+			
+			if(setPushState) {
+				History.pushState(null,  activeImg.attr('alt'), activeImg.attr('data-url'));
+				windowResize();
+			};
+		}
+		
+
+	</script>
+
+</div>

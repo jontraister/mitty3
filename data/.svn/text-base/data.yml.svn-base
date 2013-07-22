@@ -1,0 +1,358 @@
+## DO NOT USE TABS - set your editor to convert tabs to spaces instead.
+---
+general: # used in layout.php
+  url: # site url, including http/https - defaults to requested url if omitted
+  meta: # metadata
+    title: 'Movie Title: Official Movie Site' # page title
+    description: Short site summary  # max 155 characters!
+    keywords: some, keywords, or phrases, here # page keywords
+    icon: assets/icon.png # 64x64 or larger shortcut icon for chrome/firefox
+    apple_touch_icon: assets/icon.png # 72x72 icon for apple IOS
+    shortcut_icon: assets/favicon.ico # 32x32 or larger icon for Internet Explorer
+    shareMessage: 'Check this out: '
+  og:
+    title: # OpenGraph Movie Title, defaults to meta title if omitted
+    description: # OpenGraph Movie Description, defaults to meta description if omitted
+    site_name: # OpenGraph Site Name, defaults to opengraph title if omitted
+    image: assets/icon.png
+  gtm_id: GTM-KGQ9 # use provided google tag manager id
+  UACode: UA-41473953-2 #use provided UACode
+  timezone: America/New_York
+  locale: US
+  ratings: # ratings information in the bottom bar to the right, disable by commenting the structure out
+    image: img/not-rated.png
+    text: This film is not yet rated
+    description: |
+      For rating reasons, go to <br/>
+      <a href="http://www.mpaa.org" class="no-ajaxy" target="_blank">MPAA.ORG</a>, <a href="http://www.filmratings.com" class="no-ajaxy" target="_blank">filmratings.com</a>
+  copyright: # leave this empty for the default terms
+  navigation: # top navigation links, disable by commenting out list elements
+    -
+      title: About
+      link: about.html
+    -
+      title: Photos
+      link: photo-1.html
+    -
+      title: Videos
+      link: video-1.html
+    -
+      title: Cast and Crew
+      link: castandcrew.html
+    -
+      title: Games
+      link: games.html
+  coppa: false # set to true to turn off social widgets, share/like/plus links, youtube content sharing, and the signup page
+  audio:
+      src: audio/music
+      state: unmuted # unmuted or muted is the start state
+#     videoBG: true # Set to true and provide assets/videoBG.* in jpg, mp4, ogg and webm formats to enable video backgrounds. Uncomment to disable
+  social: # disable by commenting the structure out
+    title: Find us on
+    links: # the social button names must be set up in the CSS, disable by commenting out list elements
+      -
+        name: facebook
+        link: http://www.facebook.com/FoxMovies
+        mobile: fb://profile/121150347941070
+        share: # share/like/tweet/plus widget and css class for this network, uncomment/remove structure to disable
+            cssClass: like-button
+            widget: |
+              <div class="fb-like" data-href="{$url}" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" data-font="arial" data-colorscheme="light"></div>
+      -
+        name: twitter
+        link: http://twitter.com/20thcenturyfox
+        share: # share/like/tweet/plus widget and css class for this network, uncomment/remove structure to disable
+          cssClass: tweet-button
+          widget: |
+                <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+      -
+        name: pinterest
+        link: '#'
+      -
+        name: google
+        link: '#'
+        share: # share/like/tweet/plus widget and css class for this network, uncomment/remove structure to disable
+          cssClass: plusone-button
+          widget: |
+                <!-- Place this tag where you want the +1 button to render. -->
+                <div class="g-plusone" data-size="medium" data-callback="gPlusEvent" ></div>
+                <!-- Place this tag after the last +1 button tag. -->
+                <script type="text/javascript">
+                  (function() {
+                    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                    po.src = 'https://apis.google.com/js/plusone.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+                  })();
+                </script>
+      -
+        name: youtube
+        link: 'http://youtube.com/foxMovies'
+  tickets: # uncomment structure to remove widget
+    title: Get Tickets
+    items:
+      fandango: # uncomment structure to remove link
+        link: http://www.fandango.com/agooddaytodiehard_149367/movieoverview
+        title: Fandango
+      movietickets: # uncomment structure to remove link
+        link: http://www.movietickets.com/movie_detail.asp?movie_id=76131
+        title: Movie Tickets
+  billing:  # disable by commenting structure out
+    title: Billing
+    description: Billing and Legal
+    url: assets/billing.png
+  sitemap: # disable by commenting structure out
+    title: Site Map
+  signup: # disable by commenting structure out
+    title: Sign Up!
+# languages: # leave empty or disable by commenting out list elements
+#    -
+#      name: English
+#      link: '#'
+#    -
+#      name: French
+#      link: '#'
+#    -
+#      name: Spanish
+#     link: '#'
+#  language:
+#    title: Languages
+
+# local tracking tags, scripts etc that should be added to the layout.php
+  include: |
+    <!-- local include -->
+pages: # pages with content, disable individual pages by commenting out individual structures
+  index.html:
+    meta:
+      title: Trailer
+    video: http://www.youtube.com/embed/mX2HBsHbNZM?autoplay=1
+  home.html: #same as index, without video on top
+    meta:
+      title: View Trailers
+    title: Home Page
+    feeds: # feed box, disable by commenting the structure out
+      facebook: # facebook feed, disable by commenting the structure out
+        title: Facebook
+        heading: /FoxMovies
+        widget: |
+            <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2FFoxMovies&amp;width=320&amp;height=395&amp;show_faces=false&amp;colorscheme=dark&amp;stream=true&amp;border_color=rgba&#40;255&#44;255&#44;255&#44;0&#46;2&#41;&amp;header=false&amp;appId=224937167563305" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:320px; height:395px;" allowTransparency="true"></iframe>
+      twitter: # twitter feed, disable by commenting the structure out
+        title: Twitter
+        heading: '@20thcenturyfox'
+        widget: |
+              <a class="twitter-timeline" href="https://twitter.com/20thcenturyfox" height="250" style="margin-bottom:10px;" data-theme="dark" data-chrome="noheader nofooter noborders" data-widget-id="313035613186170883">Tweets by @20thcenturyfox</a>
+              <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      instagram:
+        title: Instagram
+        heading: '@20thcenturyfox'
+        widget: |
+          <!-- SnapWidget -->
+          <iframe src="http://snapwidget.com/in/?u=MjB0aGNlbnR1cnlmb3h8aW58MjQyfDF8M3w0MjQyNDJ8eWVzfDV8bm9uZQ==" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:320px; height: 771px" ></iframe>
+  about.html:
+    meta: # metadata is optional at the page level but any value here will override the general default
+      title: Movie Title - About # REMOVE THIS
+    og:
+      description: OpenGraph Movie Synopsis # REMOVE THIS
+    title: Synopsis
+    content: |
+      <p>Uptight FBI Special Agent Sarah Ashburn (Sandra Bullock) and
+      foul-mouthed Boston cop Shannon Mullins (Melissa McCarthy)
+      couldn't be more incompatible. But when they join forces to bring
+      down a ruthless drug lord, they become the last thing anyone
+      expected: buddies. From Paul Feig, director of "Bridesmaids."</p>
+  photo.html:
+    route: '#^/?(photo)-?([0-9]+)?.html$#'
+    action: 'Photo/show'
+    meta:
+      title: Photo Gallery
+      shareMessage: 'See this: '
+    items: # add or remove photos both here and in the assets/ folder
+      -
+        url: assets/photo-1.jpg
+        title: Avatar Still
+      -
+        url: assets/photo-2.jpg
+        title: Life of Pi: Richard Parker
+      -
+        url: assets/photo-3.jpg
+        title: Prometheus
+      -
+        url: assets/photo-4.jpg
+        title: Epic Cast
+  video.html:
+    route: '#^/?(video)-?([0-9]+)?.html$#'
+    action: 'YouTubeVideo/show'
+    meta:
+      title: Trailers and Clips
+      shareMessage: 'Watch this: '
+    title: Trailers and Clips
+    youtube:
+      googleapi_key: AIzaSyAKVtC88s6QSltUpO9frcVy-LzuenFi47k # use provided server key, see  https://developers.google.com/console/help/#generatingdevkeys
+      query:
+#        type: playlist # either playlist or channel
+#        id: PLOU2XLYxmsILZtWbRTSEBObsTq0Bj2Sp5 # playlist id
+        type: channel # either playlist or channel
+        id: UC2-BeLxzUBSs0uSrmzWhJuQ # channel id
+  castandcrew.html:
+    route: '#^/?(castandcrew)-?([0-9]+)?.html$#'
+    action: 'PageSet/show'
+    meta:
+      title: Cast and Crew
+      shareMessage: 'Read this: '
+    items: # add or remove cast photos both here and in the assets/ folder
+      -
+        url: assets/cast-1.jpg
+        title: John Actor
+        description: |
+          <p>Cast 1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer elit magna, scelerisque eu porttitor ac, bibendum nec tortor. Maecenas dictum accumsan fermentum. Nullam tristique, purus vel venenatis vehicula, ante lorem luctus dolor, id posuere metus dui nec ligula. Morbi quis ligula felis. Curabitur eget turpis eget dolor dapibus imperdiet nec eget nulla. Nulla vulputate vestibulum velit, ac tristique eros commodo ac. Cras id lectus nunc. Mauris mattis fringilla hendrerit. Phasellus ornare vestibulum posuere. Curabitur vitae enim vitae dui condimentum tristique quis at nulla. Praesent a venenatis magna. Phasellus neque quam, euismod in pharetra euismod, sollicitudin ac mauris. Aenean hendrerit leo varius odio facilisis sagittis. Nullam sed quam leo, vitae fringilla nisl.</p>
+          <p>Etiam imperdiet, massa elementum malesuada mollis, justo ante pharetra dolor, at scelerisque elit elit eu turpis. Etiam scelerisque, erat at interdum viverra, tellus tellus accumsan eros, non mollis quam dolor vel nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget lorem felis, vel sagittis velit. Aenean vel mauris velit. Ut consequat, mauris vitae fringilla sodales, turpis dui ornare felis, nec convallis metus tellus quis purus. Nulla iaculis rhoncus tortor, nec euismod urna ornare quis. Nunc quis egestas elit. Proin nunc dui, porta sed blandit sit amet, venenatis a velit. Curabitur lacinia diam eget mi euismod eget accumsan enim ultrices. In hac habitasse platea dictumst. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam aliquam varius metus eget sodales.</p>
+      -
+        url: assets/cast-2.jpg
+        title: Jan Actor
+        description: |
+          <p>Cast 2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer elit magna, scelerisque eu porttitor ac, bibendum nec tortor. Maecenas dictum accumsan fermentum. Nullam tristique, purus vel venenatis vehicula, ante lorem luctus dolor, id posuere metus dui nec ligula. Morbi quis ligula felis. Curabitur eget turpis eget dolor dapibus imperdiet nec eget nulla. Nulla vulputate vestibulum velit, ac tristique eros commodo ac. Cras id lectus nunc. Mauris mattis fringilla hendrerit. Phasellus ornare vestibulum posuere. Curabitur vitae enim vitae dui condimentum tristique quis at nulla. Praesent a venenatis magna. Phasellus neque quam, euismod in pharetra euismod, sollicitudin ac mauris. Aenean hendrerit leo varius odio facilisis sagittis. Nullam sed quam leo, vitae fringilla nisl.</p>
+          <p>Etiam imperdiet, massa elementum malesuada mollis, justo ante pharetra dolor, at scelerisque elit elit eu turpis. Etiam scelerisque, erat at interdum viverra, tellus tellus accumsan eros, non mollis quam dolor vel nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget lorem felis, vel sagittis velit. Aenean vel mauris velit. Ut consequat, mauris vitae fringilla sodales, turpis dui ornare felis, nec convallis metus tellus quis purus. Nulla iaculis rhoncus tortor, nec euismod urna ornare quis. Nunc quis egestas elit. Proin nunc dui, porta sed blandit sit amet, venenatis a velit. Curabitur lacinia diam eget mi euismod eget accumsan enim ultrices. </p>
+      -
+        url: assets/cast-3.jpg
+        title: Yo Mamma
+        description: |
+          <p>Cast 3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer elit magna, scelerisque eu porttitor ac, bibendum nec tortor. Maecenas dictum accumsan fermentum. Nullam tristique, purus vel venenatis vehicula, ante lorem luctus dolor, id posuere metus dui nec ligula. Morbi quis ligula felis. Curabitur eget turpis eget dolor dapibus imperdiet nec eget nulla. Nulla vulputate vestibulum velit, ac tristique eros commodo ac. Cras id lectus nunc. Mauris mattis fringilla hendrerit. Phasellus ornare vestibulum posuere. Curabitur vitae enim vitae dui condimentum tristique quis at nulla. Praesent a venenatis magna. Phasellus neque quam, euismod in pharetra euismod, sollicitudin ac mauris. Aenean hendrerit leo varius odio facilisis sagittis. Nullam sed quam leo, vitae fringilla nisl.</p>
+          <p>Etiam imperdiet, massa elementum malesuada mollis, justo ante pharetra dolor, at scelerisque elit elit eu turpis. Etiam scelerisque, erat at interdum viverra, tellus tellus accumsan eros, non mollis quam dolor vel nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget lorem felis, vel sagittis velit. Aenean vel mauris velit. Ut consequat, mauris vitae fringilla sodales, turpis dui ornare felis, nec convallis metus tellus quis purus. Nulla iaculis rhoncus tortor, nec euismod urna ornare quis. Nunc quis egestas elit. Proin nunc dui, porta sed blandit sit amet, venenatis a velit. Curabitur lacinia diam eget mi euismod eget accumsan enim ultrices. In hac habitasse platea dictumst. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam aliquam varius metus eget sodales. Vestibulum turpis arcu, congue ac lobortis ut, convallis at purus. Vivamus sit amet convallis magna.</p>
+      -
+        url: assets/cast-4.jpg
+        title: You Daddy
+        description: |
+          <p>Cast 4 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer elit magna, scelerisque eu porttitor ac, bibendum nec tortor. Maecenas dictum accumsan fermentum. Nullam tristique, purus vel venenatis vehicula, ante lorem luctus dolor, id posuere metus dui nec ligula. Morbi quis ligula felis. Curabitur eget turpis eget dolor dapibus imperdiet nec eget nulla. Nulla vulputate vestibulum velit, ac tristique eros commodo ac. Cras id lectus nunc. Mauris mattis fringilla hendrerit. Phasellus ornare vestibulum posuere. Curabitur vitae enim vitae dui condimentum tristique quis at nulla. Praesent a venenatis magna. Phasellus neque quam, euismod in pharetra euismod, sollicitudin ac mauris. Aenean hendrerit leo varius odio facilisis sagittis. Nullam sed quam leo, vitae fringilla nisl.</p>
+  games.html:
+    meta: # metadata is optional at the page level but any value here will override the general default
+      title: Movie Title - Games # REMOVE THIS
+    og:
+      description: Games # REMOVE THIS
+    title: Games
+    items: # add or remove games both here and in the assets/ folder
+      -
+        image: assets/game1.png
+        title: Game 1
+        url: '#'
+      -
+        image: assets/game2.png
+        title: Game 2
+        url: '#'
+      -
+        image: assets/game3.png
+        title: Game 3
+        url: '#'
+      -
+        image: assets/game4.png
+        title: Game 4
+        url: '#'
+      -
+        image: assets/game5.png
+        title: Game 5
+        url: '#'
+      -
+        image: assets/game6.png
+        title: Game 6
+        url: '#'
+      -
+        image: assets/game7.png
+        title: Game 7
+        url: '#'
+      -
+        image: assets/game8.png
+        title: Game 8
+        url: '#'
+      -
+        image: assets/game9.png
+        title: Game 9
+        url: '#'
+  signup.html:
+    meta:
+      title: Sign up!
+    title: Sign up!
+    content: Stay informed on upcoming releases and news
+    id: fxus.57 # the responsys campaign id  and respondent must be provided by Fox IT
+    respondent: https://foxus.rsys1.net/servlet/campaignrespondent
+    regSource: # enter a unique string to identify the title or leave empty to use the meta title. All special characters will be stripped.
+    emailLabel: Email
+    submit: Submit
+  sitemap.html:
+    route: '#(sitemap).(html|xml)$#'
+    action: 'Sitemap/show'
+    title: 'Site Map'
+  error.html:
+    meta:
+      title: Page Not Found!
+    title: Page Not Found!
+    content: |
+      <p>Sorry, but the page you were trying to view does not exist.</p>
+      <p>It looks like this was the result of either:</p>
+      <ul>
+          <li>a mistyped address</li>
+          <li>an out-of-date link</li>
+      </ul>
+      <script>
+          var GOOG_FIXURL_LANG = (navigator.language || '').slice(0,2),GOOG_FIXURL_SITE = location.host;
+      </script>
+      <script src="http://linkhelp.clients.google.com/tbproxy/lh/wm/fixurl.js"></script>
+
+      <a href="/home.html">Return to the homepage</a>
+  mobile/index.html: # uncomment this structure to disable the mobile page and user agent switch
+    route: '#mobile.html$#'
+    action: 'Mobile/index'
+    main:
+      url: assets/mobile_splash.jpg
+      title: Epic - In Theatres May 24
+    sections:
+      video.html: # comment structure out to disable
+        title: Trailer
+        video: http://www.youtube.com/embed/mX2HBsHbNZM?autoplay=1
+      about.html:
+        title: Story
+        content: |
+          <p>Uptight FBI Special Agent Sarah Ashburn (Sandra Bullock) and
+          foul-mouthed Boston cop Shannon Mullins (Melissa McCarthy)
+          couldn't be more incompatible. But when they join forces to bring
+          down a ruthless drug lord, they become the last thing anyone
+          expected: buddies. From Paul Feig, director of "Bridesmaids."</p>
+      photo.html:
+        title: Gallery
+        items:
+          -
+            url: assets/photo-1-small.jpg
+            title: Avatar Still
+          -
+            url: assets/photo-2-small.jpg
+            title: Life of Pi: Richard Parker
+          -
+            url: assets/photo-3-small.jpg
+            title: Prometheus Still
+          -
+            url: assets/photo-4-small.jpg
+            title: Epic Cast
+      castandcrew.html:
+        title: Cast & Crew
+        items:
+          -
+            url: assets/cast-1-small.jpg
+            title: 'Joe Actor'
+            description: |
+               <p>Cast 1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer elit magna, scelerisque eu porttitor ac, bibendum nec tortor. Maecenas dictum accumsan fermentum. Nullam tristique, purus vel venenatis vehicula, ante lorem luctus dolor, id posuere metus dui nec ligula. Morbi quis ligula felis. Curabitur eget turpis eget dolor dapibus imperdiet nec eget nulla. Nulla vulputate vestibulum velit, ac tristique eros commodo ac. Cras id lectus nunc. Mauris mattis fringilla hendrerit. Phasellus ornare vestibulum posuere. Curabitur vitae enim vitae dui condimentum tristique quis at nulla. Praesent a venenatis magna. Phasellus neque quam, euismod in pharetra euismod, sollicitudin ac mauris. Aenean hendrerit leo varius odio facilisis sagittis. Nullam sed quam leo, vitae fringilla nisl.</p>
+               <p>Etiam imperdiet, massa elementum malesuada mollis, justo ante pharetra dolor, at scelerisque elit elit eu turpis. Etiam scelerisque, erat at interdum viverra, tellus tellus accumsan eros, non mollis quam dolor vel nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget lorem felis, vel sagittis velit. Aenean vel mauris velit. Ut consequat, mauris vitae fringilla sodales, turpis dui ornare felis, nec convallis metus tellus quis purus. Nulla iaculis rhoncus tortor, nec euismod urna ornare quis. Nunc quis egestas elit. Proin nunc dui, porta sed blandit sit amet, venenatis a velit. Curabitur lacinia diam eget mi euismod eget accumsan enim ultrices. In hac habitasse platea dictumst. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam aliquam varius metus eget sodales. Vestibulum turpis arcu, congue ac lobortis ut, convallis at purus. Vivamus sit amet convallis magna.</p>
+          -
+            url: assets/cast-2-small.jpg
+            title: 'Jane Actor'
+            description: |
+               <p>Cast 2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer elit magna, scelerisque eu porttitor ac, bibendum nec tortor. Maecenas dictum accumsan fermentum. Nullam tristique, purus vel venenatis vehicula, ante lorem luctus dolor, id posuere metus dui nec ligula. Morbi quis ligula felis. Curabitur eget turpis eget dolor dapibus imperdiet nec eget nulla. Nulla vulputate vestibulum velit, ac tristique eros commodo ac. Cras id lectus nunc. Mauris mattis fringilla hendrerit. Phasellus ornare vestibulum posuere. Curabitur vitae enim vitae dui condimentum tristique quis at nulla. Praesent a venenatis magna. Phasellus neque quam, euismod in pharetra euismod, sollicitudin ac mauris. Aenean hendrerit leo varius odio facilisis sagittis. Nullam sed quam leo, vitae fringilla nisl.</p>
+               <p>Etiam imperdiet, massa elementum malesuada mollis, justo ante pharetra dolor, at scelerisque elit elit eu turpis. Etiam scelerisque, erat at interdum viverra, tellus tellus accumsan eros, non mollis quam dolor vel nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget lorem felis, vel sagittis velit. Aenean vel mauris velit. Ut consequat, mauris vitae fringilla sodales, turpis dui ornare felis, nec convallis metus tellus quis purus. Nulla iaculis rhoncus tortor, nec euismod urna ornare quis. Nunc quis egestas elit. Proin nunc dui, porta sed blandit sit amet, venenatis a velit. Curabitur lacinia diam eget mi euismod eget accumsan enim ultrices. In hac habitasse platea dictumst. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam aliquam varius metus eget sodales. Vestibulum turpis arcu, congue ac lobortis ut, convallis at purus. Vivamus sit amet convallis magna.</p>
+          -
+            url: assets/cast-3-small.jpg
+            title: 'Yo Mamma'
+            description: |
+               <p>Cast 3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer elit magna, scelerisque eu porttitor ac, bibendum nec tortor. Maecenas dictum accumsan fermentum. Nullam tristique, purus vel venenatis vehicula, ante lorem luctus dolor, id posuere metus dui nec ligula. Morbi quis ligula felis. Curabitur eget turpis eget dolor dapibus imperdiet nec eget nulla. Nulla vulputate vestibulum velit, ac tristique eros commodo ac. Cras id lectus nunc. Mauris mattis fringilla hendrerit. Phasellus ornare vestibulum posuere. Curabitur vitae enim vitae dui condimentum tristique quis at nulla. Praesent a venenatis magna. Phasellus neque quam, euismod in pharetra euismod, sollicitudin ac mauris. Aenean hendrerit leo varius odio facilisis sagittis. Nullam sed quam leo, vitae fringilla nisl.</p>
+               <p>Etiam imperdiet, massa elementum malesuada mollis, justo ante pharetra dolor, at scelerisque elit elit eu turpis. Etiam scelerisque, erat at interdum viverra, tellus tellus accumsan eros, non mollis quam dolor vel nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget lorem felis, vel sagittis velit. Aenean vel mauris velit. Ut consequat, mauris vitae fringilla sodales, turpis dui ornare felis, nec convallis metus tellus quis purus. Nulla iaculis rhoncus tortor, nec euismod urna ornare quis. Nunc quis egestas elit. Proin nunc dui, porta sed blandit sit amet, venenatis a velit. Curabitur lacinia diam eget mi euismod eget accumsan enim ultrices. In hac habitasse platea dictumst. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam aliquam varius metus eget sodales. Vestibulum turpis arcu, congue ac lobortis ut, convallis at purus. Vivamus sit amet convallis magna.</p>
+          -
+            url: assets/cast-4-small.jpg
+            title: 'Yo Daddy'
+            description: |
+               <p>Cast 4 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer elit magna, scelerisque eu porttitor ac, bibendum nec tortor. Maecenas dictum accumsan fermentum. Nullam tristique, purus vel venenatis vehicula, ante lorem luctus dolor, id posuere metus dui nec ligula. Morbi quis ligula felis. Curabitur eget turpis eget dolor dapibus imperdiet nec eget nulla. Nulla vulputate vestibulum velit, ac tristique eros commodo ac. Cras id lectus nunc. Mauris mattis fringilla hendrerit. Phasellus ornare vestibulum posuere. Curabitur vitae enim vitae dui condimentum tristique quis at nulla. Praesent a venenatis magna. Phasellus neque quam, euismod in pharetra euismod, sollicitudin ac mauris. Aenean hendrerit leo varius odio facilisis sagittis. Nullam sed quam leo, vitae fringilla nisl.</p>
+               <p>Etiam imperdiet, massa elementum malesuada mollis, justo ante pharetra dolor, at scelerisque elit elit eu turpis. Etiam scelerisque, erat at interdum viverra, tellus tellus accumsan eros, non mollis quam dolor vel nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget lorem felis, vel sagittis velit. Aenean vel mauris velit. Ut consequat, mauris vitae fringilla sodales, turpis dui ornare felis, nec convallis metus tellus quis purus. Nulla iaculis rhoncus tortor, nec euismod urna ornare quis. Nunc quis egestas elit. Proin nunc dui, porta sed blandit sit amet, venenatis a velit. Curabitur lacinia diam eget mi euismod eget accumsan enim ultrices. In hac habitasse platea dictumst. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam aliquam varius metus eget sodales. Vestibulum turpis arcu, congue ac lobortis ut, convallis at purus. Vivamus sit amet convallis magna.</p>

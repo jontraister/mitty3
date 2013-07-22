@@ -1,0 +1,10 @@
+#!/bin/bash
+cd `dirname $0`
+
+cd ..
+
+svn up -q || ( echo 'error updating from svn!' ; exit 2 )
+
+sh bin/setup || exit 1
+
+

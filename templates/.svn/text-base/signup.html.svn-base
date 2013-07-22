@@ -1,0 +1,46 @@
+<div id="content">
+      <div id="signup" class="modal">
+        <div class="modal-header">
+          <a href="home.html" class="close"></a>
+          <h1><?php echo $title; ?></h1>
+        </div>
+        <div class="modal-body">
+          <form class="form-horizontal" action="<?php echo $respondent ?>" method="POST" target="_blank">
+          <span><?php echo $content; ?></span>
+          <hr />
+          <input type="hidden" name="_ID_" value="<?php echo $id ?>" />
+          <input type="hidden" name="REG_SOURCE" value="<?php echo preg_replace('/[^a-zA-Z0-9]/','', $regSource?$regSource:$this->vars['meta']['title']); ?>"/>
+          <div class="control-group">
+              <label class="control-label" for="email" ><?php echo $emailLabel ?></label>
+              <div class="controls">
+                  <input type="text" name="email" id="email" size="40" />
+              </div>
+          </div>
+          <div class="control-group">
+              <div class="controls">
+              	  <label class="checkbox">
+                  	  <input type="checkbox" name="opt-in" id="opt-in" /> Opt in
+                  </label>
+              </div>
+          </div>
+          <div class="control-group">
+              <div class="controls">
+		          <input class="btn" type="submit" value="<?php echo $submit ?>" />
+              </div>
+          </div>
+          </form>
+        </div>
+      </div>
+      <a class="screen" href="home.html"></a>
+
+      <script type="text/javascript">
+
+        <!-- Modal - Auto-positioning -->
+
+        $('.modal').css({
+        	top: ($(window).height() - $('.modal').outerHeight())/2
+        });
+
+	  </script>
+
+    </div>

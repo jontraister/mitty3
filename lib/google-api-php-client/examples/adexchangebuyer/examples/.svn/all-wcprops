@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/domth_template/!svn/ver/582/branches/mitty/lib/google-api-php-client/examples/adexchangebuyer/examples
+END
+UpdateAccount.php
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/domth_template/!svn/ver/582/branches/mitty/lib/google-api-php-client/examples/adexchangebuyer/examples/UpdateAccount.php
+END
+GetCreative.php
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/domth_template/!svn/ver/582/branches/mitty/lib/google-api-php-client/examples/adexchangebuyer/examples/GetCreative.php
+END
+GetDirectDeals.php
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/domth_template/!svn/ver/582/branches/mitty/lib/google-api-php-client/examples/adexchangebuyer/examples/GetDirectDeals.php
+END
+SubmitCreative.php
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/domth_template/!svn/ver/582/branches/mitty/lib/google-api-php-client/examples/adexchangebuyer/examples/SubmitCreative.php
+END
+GetAllAccounts.php
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/domth_template/!svn/ver/582/branches/mitty/lib/google-api-php-client/examples/adexchangebuyer/examples/GetAllAccounts.php
+END

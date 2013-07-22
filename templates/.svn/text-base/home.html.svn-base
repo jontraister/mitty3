@@ -1,0 +1,101 @@
+<div id="content">
+            
+	<div id="home">
+    <?php $this->render('templates/sharelinks.php'); ?>
+	</div>
+    
+	<?php if (isset($feeds) && count((array) $feeds)): ?>
+    <div id="social-feed" class="widget">
+        <ul class="nav nav-tabs" id="feedTab">
+            <?php $i=0; foreach ($feeds as $feedName=>$feedInfo): ?>
+            <li class="<?php if (0==$i++) echo 'active'; ?> nav-tab"><a href="#<?php echo $feedName ?>" class="no-ajaxy" data-toggle="tab"><?php echo $feedInfo->title ?></a></li>
+           <?php endforeach ?>
+            <button type="button" id="feedToggle" class="minus-icon" data-toggle="collapse" data-target="#feedContainer"></button>
+        </ul>
+        <div class="tab-content in collapse" id="feedContainer">
+            <?php $i=0; foreach ($feeds as $feedName=>$feedInfo): ?>
+            <div class="tab-pane<?php if (0==$i++) echo ' active'; ?>" id="<?php echo $feedName ?>">
+                <div class="heading <?php echo $feedName ?>-heading">
+                    <?php echo $feedInfo->heading ?>
+                </div>
+                <div id="<?php echo $feedName ?>Feed" class="feed-wrap">
+                    <div class="feed">
+                        <?php echo $feedInfo->widget->literal(); ?>
+                    </div>
+                </div>
+            </div>
+           <?php endforeach ?>
+        </div>
+    </div>
+   	<?php endif ?>
+	
+    <div id="tickets" class="widget">
+        <div class="header">
+            Get Tickets
+            <button type="button" id="ticketsToggle" class="minus-icon" data-toggle="collapse" data-target="#ticketsContainer"></button>
+        </div>
+      <?php if ($this->vars['tickets']): ?>
+        <div class="in collapse" id="ticketsContainer">
+            <ul class="ticket-links">
+                <?php foreach ($this->vars['tickets']['items'] as $ticketName => $ticket): ?>
+                  <li>
+                  	<a onclick="dataLayer.push({'eventCategory':'Ticketing','eventAction':'Exit','eventLabel':'<?php echo $ticket->title ?>','event':'siteEvent'})" href="<?php echo $ticket->link ?>" target="_blank">
+                  		<img src="../assets/<?php echo $ticketName ?>.jpg" alt="<?php echo $ticket->title ?>" />
+                  	</a>
+                  </li>
+                <?php endforeach ?>
+            </ul>
+        </div>
+      <?php endif ?>
+    </div>
+    
+    <div id="home-ent" class="widget">
+        <div class="header">
+            Buy Now
+            <button type="button" id="homeEntToggle" class="minus-icon" data-toggle="collapse" data-target="#homeEntContainer"></button>
+        </div>
+        <div class="in collapse" id="homeEntContainer">
+            <ul class="home-ent-links">
+                  <li>
+                  	<a href="#" target="_blank">
+                  		<img src="../assets/digitalhd.jpg" alt="Digital HD" />
+                  	</a>
+                  </li>
+                  <li>
+                  	<a href="#" target="_blank">
+                  		<img src="../assets/bluray.jpg" alt="BluRay" />
+                  	</a>
+                  </li>
+                  <li>
+                  	<a href="#" target="_blank">
+                  		<img src="../assets/dvd.jpg" alt="DVD" />
+                  	</a>
+                  </li>
+            </ul>
+        </div>
+    </div>
+        
+    <div id="social">
+        <?php if (isset($this->vars['social']) && count((array) $this->vars['social']->links)): ?>
+        <div id="social-links">
+            <span class="span"><?php echo $this->vars['social']->title ?></span>
+
+            <?php if (isset($this->vars['audio'])): ?>
+                <div id="btnAudio" onclick="javascript:toggleAudio()" class="<?php echo ($this->vars['audio']->state=="muted") ? "muted" : "unmuted"; ?>"></div>
+            <?php endif ?>
+
+            <div class="social-header">
+            <?php foreach ($this->vars['social']->links as $link): ?>
+                <a target="_blank" class="social-icon-button <?php echo $link->name?>-button" href="<?php echo $link->link; ?>" onclick='exitSiteEvent("<?php echo $link->name?>")' ></a>
+            <?php endforeach; ?>
+            </div>
+
+        </div>
+        <?php endif; ?>
+    </div>
+		<script>
+	
+			init();
+
+		</script>
+</div>

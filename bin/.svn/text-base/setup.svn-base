@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cd `dirname $0` 
+
+sh composer --quiet --no-interaction --no-ansi install || ( echo 'error in composer install' ; exit 2 )
+
+

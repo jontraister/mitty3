@@ -1,0 +1,5 @@
+
+      <div id="main_image_container">
+        <img id="main_image" src="<?php echo $main->url ?>" alt="<?php echo $main->title ?>">
+        <h3>February 14</h3>
+      </div>

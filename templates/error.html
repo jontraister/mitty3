@@ -1,0 +1,23 @@
+    <div id="content">
+    	<div id="error" class="modal">
+            <div class="modal-header">
+	          <a href="home.html" class="close" ></a>
+              <h1><?php echo $title; ?></h1>
+            </div>
+            <div class="modal-body">
+              <?php echo $content->literal(); ?>
+            </div>
+        </div>
+
+      <a class="screen" href="home.html"></a>
+
+      <script type="text/javascript">
+        $(window).resize(function(){
+          $('#sitemap').css({
+            top: ($(window).height() - $('#sitemap').outerHeight())/2
+          });
+        });
+        $(window).resize();
+      </script>
+
+    </div>

@@ -1,0 +1,13 @@
+{
+	"template":{
+		"mainBackground" 	: "main_background_shadow.jpg",
+	    "left"				: "logo.png",
+	    "right"				: "real_d_3d.png",
+	    "billing"			: "not_rated.png"
+	},"slides":{
+		"1"					: "ah_060_340.131.jpg",
+		"2"					: "ah_090_020.127.jpg",
+		"3"					: "rsf_130_210m_114.jpg",
+		"length"			: 3
+	}
+}

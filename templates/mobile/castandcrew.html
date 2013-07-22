@@ -1,0 +1,41 @@
+				<div id="mobile_cast">
+					<h2 id="cast_tab" class="mobile_tab"><?php echo ($title) ?></h2>
+					<div id="cast_tab_content" style="display:none">
+
+<section class="bios_image_content" id="bios_image_content">
+<img class="spinner" src="mobile/images/ui/ajax-loader.gif" alt="ajax-loader" width="31" height="31">
+<div id="bios_image_container">
+
+	<div id="bios_slides" class="swipe">
+
+<?php $i=0; foreach ($items as $key => $item): ?>
+		<div class="bios_image <?php echo $key; ?> <?php if($i++ == 0) { echo 'first active';} if($i == count((array) $items) ) { echo ' last';} ?>" style="background-image: url(<?php echo $item->url ?>);" data-name="<?php echo $key; ?>"></div>
+<?php endforeach ?>
+	</div>
+
+	<div class="hit_zone left">
+	</div>
+	<span class="carousel-control left arrow prev">‹</span>
+
+	<div class="hit_zone right">
+	</div>
+	<span class="carousel-control right arrow next">›</span>
+
+</div>
+
+<!-- /#bios_image_container -->
+
+</section>
+
+<div id="bios_text_container">
+<?php $i=0; foreach ($items as $key => $item): ?>
+		<div class="<?php echo $key; ?> single_bio <?php if($i++ == 0) { echo 'first active';} if($i == count((array) $items) ) { echo ' last';} ?>">
+			<h3><?php echo $item->title; ?></h3>
+			<p><?php echo $item->description->literal(); ?></p>
+		</div>
+<?php endforeach ?>
+</div>
+
+
+					</div>
+				</div>

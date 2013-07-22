@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/domth_template/!svn/ver/582/branches/mitty/lib/google-api-php-client/test
+END
+BaseTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/domth_template/!svn/ver/582/branches/mitty/lib/google-api-php-client/test/BaseTest.php
+END
+AllTests.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/domth_template/!svn/ver/582/branches/mitty/lib/google-api-php-client/test/AllTests.php
+END
+phpunit.xml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/domth_template/!svn/ver/582/branches/mitty/lib/google-api-php-client/test/phpunit.xml
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/domth_template/!svn/ver/582/branches/mitty/lib/google-api-php-client/test/README
+END

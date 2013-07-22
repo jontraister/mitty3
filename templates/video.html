@@ -1,0 +1,101 @@
+    <div id="content">
+      <div id="video" class="video">
+        <!-- H! tag removed -->
+        <a href="home.html" class="close" onclick="resetPlayer();"></a>
+        <?php if (isset($error)): ?>
+          <div class="error"><?php echo $error ?></div>
+        <?php else: ?>
+          <?php if (isset($items[$selected])): ?>
+          <iframe id="video-player" name="video-player" class="youtube-player video-player" src="<?php echo $items->$selected->url ?>" frameborder="0" allowfullscreen width="100%" height="100%"></iframe>
+          <?php endif ?>
+          <?php $this->render('templates/sharelinks.php'); ?>
+          <div id="videosCarousel" class="carousel slide" data-interval="false">
+            <div class="carousel-inner">
+               <?php
+                $itemArray= (array) $items; $sets=array(); $setStart=0; $setLength=4;
+                do {
+                 $sets[] = array_slice($itemArray, $setStart, $setLength, true);
+                 $setStart += $setLength;
+                } while(count($items)>$setStart+1)
+              ?>
+              <?php foreach ($sets as $j=>$set): ?>
+                <ul class="media-gallery item<?php if ($selected>=$j*$setLength && $selected <= ($j+1)*$setLength) echo ' active'; ?>">
+                <?php foreach ($set as $i => $video): ?>
+                <li class="media<?php if ($selected==$i) echo ' active-video'; ?>">
+                  <a href="video-<?php echo $i+1 ?>.html" onclick="resetPlayer();" animate="false" data-index="<?php echo $i+1 ?>" >
+                    <img class="media-thumbnail" src="<?php echo $video->thumb; ?>" title="<?php echo $video->title; ?>" alt="<?php echo $video->title;?>" />
+                    <span class="media-title">
+                      <?php echo $video->title ?>
+                    </span>
+                  </a>
+                </li>
+                <?php endforeach ?>
+                </ul>
+              <?php endforeach ?>
+             </div>
+            <?php if (count($itemArray>4)): ?>
+              <a class="carousel-control left prev-nav no-ajaxy" href="#videosCarousel" data-slide="prev"></a>
+              <a class="carousel-control right next-nav no-ajaxy" href="#videosCarousel" data-slide="next"></a>
+            <?php endif ?>
+          </div>
+          <?php endif ?>
+      </div>
+      <a class="screen" href="home.html" onclick="resetPlayer();"></a>
+
+      <script type="text/javascript">
+
+        <!-- Video Player - Auto-resize and Positioning -->
+		
+
+		
+		$('#video-player').load(function(){
+	
+			windowResize();
+
+			var url = document.location.href;
+			var msg = '<?php echo $this->vars['meta']['shareMessage'] ?>' + url;
+			ReloadShareButtons(url, msg);
+			          	 //Stop the Player to clear Interval
+	        //ClearPlayer();
+			onYouTubeIframeAPIReady();
+		})
+
+
+		<!-- Video Player - Change source -->
+
+        function loadIframe(iframeName, url) {
+
+          var iframe = $('.' + iframeName);
+
+          if ( iframe.length ) {
+
+
+            iframe.attr('src',url);
+
+            //start YouTubeTracker
+            alert('yt');
+            onYouTubeIframeAPIReady();
+            return false;
+          }
+
+            alert('no length');
+          return true;
+        }
+
+        $(".media").click(function(){
+          $(".active-video").removeClass("active-video");
+          $(this).addClass("active-video");
+        });
+        
+        if(!IsPaused()) {
+        
+			if (audio.paused == false)
+			{
+				audio.pause();
+			}
+		}
+
+	</script>
+
+    </div>
+

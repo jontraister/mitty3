@@ -1,0 +1,36 @@
+    <div id="content">
+      <div id="sitemap" class="modal">
+        <div class="modal-header">
+          <a href="home.html" class="close" ></a>
+          <h1><?php echo $title; ?></h1>
+        </div>
+        <div class="modal-body">
+          <?php $list=function($pages) use(&$list) { ?>
+            <ul>
+              <?php foreach ($pages as $page): ?>
+                <?php if (''. $page->title): ?>
+                  <li><a href="<?php echo $page->url ?>"><?php echo $page->title ?></a></li>
+                  <?php if (isset($page['pages'])) $list($page['pages']); ?>
+                  <?php endif ?>
+              <?php endforeach ?>
+            </ul>
+          <?php } ?>
+          <?php
+
+          $list((array) $pages); ?>
+
+        </div>
+      </div>
+      
+      <a class="screen" href="home.html"></a>
+
+      <script type="text/javascript">
+        $(window).resize(function(){
+          $('#sitemap').css({
+            top: ($(window).height() - $('#sitemap').outerHeight())/2
+          });
+        });
+        $(window).resize();
+      </script>
+
+    </div>

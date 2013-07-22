@@ -1,0 +1,31 @@
+				<div class="mobile_gallery">
+					<h2 id="gallery_tab" class="mobile_tab"><?php echo ($title) ?></h2>
+						<section class="lightbox_content" id="gallery_content" >
+							<img class="spinner" src="mobile/images/ui/ajax-loader.gif" alt="ajax-loader" width="31" height="31">
+							<div class="gallery_close"><img src="mobile/images/ui/close_x.png" alt="close_x" width="24" height="20"></div>
+
+<div id="slideshow_container">
+
+	<div id="slides">
+
+<?php $i=0; $count= count((array) $items); foreach ($items as $photo): ?>
+		<div id="photo-<?php $i++; echo $i; ?>" style="background-image: url(<?php echo $photo->url; ?>);" class="slideshow_image <?php if($i == 1) { echo 'first active';} if($i == $count ) { echo ' last';} ?> swipe"></div>
+<?php endforeach ?>
+	</div>
+
+	<div class="hit_zone left">
+	</div>
+	<span class="carousel-control left arrow prev">‹</span>
+
+	<div class="hit_zone right">
+	</div>
+	<span class="carousel-control right arrow next">›</span>
+
+</div>
+
+<!-- /#slideshow_container -->
+
+
+						</section>
+
+				</div>

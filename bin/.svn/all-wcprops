@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/domth_template/!svn/ver/582/branches/mitty/bin
+END
+composer.phar
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/domth_template/!svn/ver/582/branches/mitty/bin/composer.phar
+END
+setup
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/domth_template/!svn/ver/582/branches/mitty/bin/setup
+END
+generate-html.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/domth_template/!svn/ver/582/branches/mitty/bin/generate-html.php
+END
+composer
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/domth_template/!svn/ver/39/branches/mitty/bin/composer
+END
+deploy-update
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/domth_template/!svn/ver/582/branches/mitty/bin/deploy-update
+END
+generate-html
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/domth_template/!svn/ver/582/branches/mitty/bin/generate-html
+END
